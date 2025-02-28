@@ -3,7 +3,7 @@
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge&logo=github)](https://calestialashley35.github.io/budget-manager/)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 
-A modern web-based budget tracking application with dynamic visualizations and local data persistence. Built with pure JavaScript and Chart.js.
+A modern web-based budget tracking for personal finances application with dynamic visualizations and local data persistence. Built with pure JavaScript and Chart.js.
 
 ## ✨ Features
 
@@ -30,15 +30,8 @@ A modern web-based budget tracking application with dynamic visualizations and l
 - Modern web browser
 - Internet connection (for CDN resources)
 
-### Quick Start
-1. Clone repository:
-   ```bash
-   git clone https://github.com/calestialashley35/budget-manager.git
-   ```
-2. Open `index.html` in your browser
-3. Start tracking your finances!
-
-or visit the website at: https://calestialashley35.github.io/budget-manager/
+1. Visit the website: https://calestialashley35.github.io/budget-manager/
+2. Start tracking your finances!
 
 ### Using the Application
 1. **Add Transaction**

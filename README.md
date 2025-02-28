@@ -101,9 +101,3 @@ This project is open-source and licensed under the [MIT License](LICENSE).
 - **Font Awesome** - For providing icons to represent financial categories.
 - **Google Fonts** - For providing the "Inter" font, which is used for the app's text.
 
-## Future Improvements
-
-- Add user authentication for multiple users and personalized data storage.
-- Support for different currencies and conversion rates.
-- Include more detailed analytics such as tax breakdown and savings targets.
-- Implement mobile app version for iOS and Android.

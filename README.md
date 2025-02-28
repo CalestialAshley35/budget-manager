@@ -39,6 +39,8 @@ You can access the live version of **Quantum Finance Manager** by visiting the f
 4. **Delete a Transaction:**
    - Click the trash icon next to a transaction to delete it. A confirmation dialog will appear before the transaction is removed.
 
+For Full-Fledged And Detailed Guide, Consider seeing: [TUTORIALS.md](https://github.com/CalestialAshley35/budget-manager/blob/main/TUTORIALS.md)
+
 ## Technologies Used
 
 - **HTML:** The structure of the application.

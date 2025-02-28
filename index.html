@@ -3,61 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Budget Tracker</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>Quantum Finance Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <h1>Budget Manager</h1>
-            <div class="total-balance">
-                <span>Total Balance</span>
-                <h2 id="balance">$0.00</h2>
+        <header class="dashboard-header">
+            <div class="branding">
+                <i class="fas fa-wallet"></i>
+                <h1>Quantum Finance</h1>
+            </div>
+            <div class="financial-overview">
+                <div class="balance-card">
+                    <div class="balance-meta">
+                        <span>Total Balance</span>
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h2 id="balance">$0.00</h2>
+                    <div class="balance-trend">
+                        <span id="trendIndicator"></span>
+                        <span id="trendPercentage"></span>
+                    </div>
+                </div>
+                <div class="quick-stats">
+                    <div class="stat income-stat">
+                        <i class="fas fa-arrow-up-right"></i>
+                        <div>
+                            <small>Income</small>
+                            <h3 id="incomeTotal">$0.00</h3>
+                        </div>
+                    </div>
+                    <div class="stat expense-stat">
+                        <i class="fas fa-arrow-down-right"></i>
+                        <div>
+                            <small>Expenses</small>
+                            <h3 id="expenseTotal">$0.00</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 
-        <div class="stats">
-            <div class="stat-box income">
-                <i class="fas fa-arrow-up"></i>
-                <div>
-                    <p>Income</p>
-                    <h3 id="incomeTotal">$0.00</h3>
+        <div class="analytics-section">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3>Financial Analytics</h3>
+                    <div class="chart-controls">
+                        <button class="chart-btn active" data-type="doughnut">Categories</button>
+                        <button class="chart-btn" data-type="line">Trends</button>
+                    </div>
                 </div>
+                <canvas id="financeChart"></canvas>
             </div>
-            <div class="stat-box expense">
-                <i class="fas fa-arrow-down"></i>
-                <div>
-                    <p>Expense</p>
-                    <h3 id="expenseTotal">$0.00</h3>
+            
+            <div class="transaction-controls">
+                <div class="controls-header">
+                    <h3>Transaction Management</h3>
+                    <div class="filter-controls">
+                        <select id="filterType">
+                            <option value="all">All Transactions</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expenses</option>
+                        </select>
+                        <select id="filterCategory">
+                            <option value="all">All Categories</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="chart-container">
-            <canvas id="financeChart"></canvas>
-        </div>
-
-        <div class="transaction-section">
-            <form id="transactionForm">
-                <input type="text" id="description" placeholder="Description" required>
-                <input type="number" id="amount" step="0.01" placeholder="Amount" required>
-                <select id="type">
-                    <option value="income">Income</option>
-                    <option value="expense">Expense</option>
-                </select>
-                <button type="submit">Add Transaction <i class="fas fa-plus"></i></button>
-            </form>
-
-            <div class="transaction-list">
-                <h3>Transaction History</h3>
-                <ul id="transactionList"></ul>
+                <form id="transactionForm" class="transaction-form">
+                    <div class="form-grid">
+                        <input type="text" id="description" placeholder="Transaction description" required>
+                        <input type="number" id="amount" step="0.01" placeholder="Amount" required>
+                        <select id="type">
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                        <select id="category">
+                            <option value="other">Select Category</option>
+                            <option value="salary">Salary</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="investments">Investments</option>
+                            <option value="food">Food & Dining</option>
+                            <option value="transport">Transportation</option>
+                            <option value="housing">Housing</option>
+                            <option value="entertainment">Entertainment</option>
+                        </select>
+                        <input type="date" id="date" value="${new Date().toISOString().split('T')[0]}">
+                        <button type="submit">Add Transaction <i class="fas fa-plus"></i></button>
+                    </div>
+                </form>
+                <div class="transaction-list-container">
+                    <ul id="transactionList" class="transaction-list"></ul>
+                </div>
             </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-  </html>
+</html>
